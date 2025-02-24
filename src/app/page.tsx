@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getBlogPosts } from '@/utils/posts'
+import { BlogPost } from '@/types'
 
 /**
  * 博客首页组件
@@ -7,7 +8,7 @@ import { getBlogPosts } from '@/utils/posts'
  */
 export default async function Home() {
   // 使用 try-catch 处理可能的错误
-  let posts = [];
+  let posts: BlogPost[] = [];
   try {
     posts = await getBlogPosts();
   } catch (error) {
